@@ -126,7 +126,9 @@ def create_checkbox_with_tooltip(parent, text, row, tooltip_text):
     checkbox.bind("<Enter>", show_tooltip)
     return var
 
-model_selection = create_labeled_input(right_frame, "Model Using for predict:", "combobox", values=configData.model_type, row=0)
+
+model_selection = create_labeled_input(right_frame, "Model Using to predict:", "combobox", values=configData.model_type, row=0)
+
 city_var = create_checkbox_with_tooltip(right_frame, "City", 2, "Indicates if the trip is in an urban environment")
 motor_way_var = create_checkbox_with_tooltip(right_frame, "Motorway", 3, "Indicates if the trip includes highway driving")
 country_roads_var = create_checkbox_with_tooltip(right_frame, "Country Roads", 4, "Indicates if the trip includes rural road driving")

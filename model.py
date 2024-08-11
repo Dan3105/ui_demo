@@ -30,7 +30,7 @@ class MainModel:
     def __transform_data__(self, data, x_path):
         with open(x_path, 'rb') as file:
             scaler_x = pickle.load(file)
-            input = np.array([data, data])
+            input = np.array([data])
 
             return scaler_x.transform(input)
         
@@ -43,7 +43,7 @@ class MainModel:
                 model = pickle.load(file) 
                 print('iam predict 0000000')
 
-                raw_prediction = model.predict(cleanData)[0, 0]
+                raw_prediction = model.predict(cleanData.reshape(1, -1))
 
                 print(raw_prediction)
             
@@ -51,7 +51,7 @@ class MainModel:
                 print('iam scale 000000')
 
                 scaler_y = pickle.load(file)
-                tdv = scaler_y.inverse_transform(np.array(raw_prediction).reshape(-1, 1))
+                tdv = scaler_y.inverse_transform(raw_prediction.reshape(-1, 1))
                 
                 print('iam scale 11111')
                

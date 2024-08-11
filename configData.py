@@ -10,4 +10,7 @@ tire_types = {"Summer": 0, "All-season": 1, "Winter": 2}
 model_type = {
     "Linear Regression": 'ln.pkl',
     "SVM": 'svm.pkl',
+    "Elastic Net": 'elas.pkl',
+    "Random Forest": 'rf.pkl',
+    "AdaBoost": 'ab.pkl'
 }
